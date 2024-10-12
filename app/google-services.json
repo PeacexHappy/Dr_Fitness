@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "182834374213",
+    "project_id": "dr-fitness-9094b",
+    "storage_bucket": "dr-fitness-9094b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:182834374213:android:8fb761d8e4c470e8e7652c",
+        "android_client_info": {
+          "package_name": "com.example.drfitness"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBI_Z-6yPekZ_l0oWklIfjmOY1s6z1I514"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
