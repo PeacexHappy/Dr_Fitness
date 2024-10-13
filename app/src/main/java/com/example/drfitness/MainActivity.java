@@ -3,13 +3,19 @@ package com.example.drfitness;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String PREFS_NAME = "OnboardingPrefs";
     private static final String KEY_FIRST_LAUNCH = "firstLaunch";
+    private FirebaseAuth mAuth; // FirebaseAuth instance
+    private Button buttonSignOut; // Sign-out button
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +38,29 @@ public class MainActivity extends AppCompatActivity {
             // Finish MainActivity to prevent going back to it
             finish();
         } else {
-            // Normal behavior if not first launch (this should be replaced with your main activity UI setup)
+            // Normal behavior if not first launch
             setContentView(R.layout.activity_main);
+
+            // Initialize FirebaseAuth
+            mAuth = FirebaseAuth.getInstance();
+            buttonSignOut = findViewById(R.id.buttonSignOut); // Ensure this ID matches your XML layout
+
+            // Set OnClickListener for the sign-out button
+            buttonSignOut.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    signOut();
+                }
+            });
         }
+    }
+
+    private void signOut() {
+        mAuth.signOut(); // Sign out from Firebase
+
+        // Redirect to LoginActivity
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
+        finish(); // Close MainActivity
     }
 }

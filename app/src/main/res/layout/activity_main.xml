@@ -12,4 +12,13 @@
         android:text="Welcome to Dr Fitness!"
         android:textSize="24sp"
         android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/buttonSignOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Out"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp" />
+
 </LinearLayout>
