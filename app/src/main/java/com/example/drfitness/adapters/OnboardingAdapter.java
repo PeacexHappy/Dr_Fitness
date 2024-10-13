@@ -18,7 +18,7 @@ public class OnboardingAdapter extends RecyclerView.Adapter<OnboardingAdapter.On
 
     private Context context;
     private int[] images = {R.drawable.onboard1, R.drawable.onboard2, R.drawable.onboard3};
-    private String[] quotes = {"Quote 1", "Quote 2", "Quote 3"};
+    private String[] quotes = {"The only bad workout is the one that didn’t happen.", "Push yourself, no one else will.", "Healing takes time, and movement is medicine."};
 
     public OnboardingAdapter(Context context) {
         this.context = context;
@@ -37,6 +37,7 @@ public class OnboardingAdapter extends RecyclerView.Adapter<OnboardingAdapter.On
         if (position < images.length) {
             holder.imageView.setImageResource(images[position]);
             holder.textView.setText(quotes[position]);
+
         }
 
 

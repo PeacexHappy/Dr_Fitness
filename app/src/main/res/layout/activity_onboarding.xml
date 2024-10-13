@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="@android:color/white">
+    android:background="#010b13">
 
     <!-- TextView for Welcome message -->
     <TextView
@@ -15,7 +15,7 @@
         android:text="Welcome to"
         android:textSize="15sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="#808080"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,39 +30,44 @@
         android:text="Dr Fitness"
         android:textSize="28sp"
         android:textStyle="bold"
-        android:textColor="#00ffce"
+        android:textColor="#241cff"
         app:layout_constraintTop_toBottomOf="@id/tvWelcome"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="1dp" />
 
     <!-- ViewPager2 for Swiping Images -->
+
+
+    <!-- LinearLayout for Dots -->
+
+    <!-- CardView for Sign Up Button -->
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPagerOnboarding"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_width="381dp"
+        android:layout_height="447dp"
+        android:layout_marginTop="16dp"
         android:clipToPadding="false"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        app:layout_constraintTop_toBottomOf="@id/tvAppName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@id/dotIndicatorLayout"
-        android:layout_marginTop="16dp"
-        android:scaleType="fitCenter" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAppName" />
 
-    <!-- LinearLayout for Dots -->
     <LinearLayout
         android:id="@+id/dotIndicatorLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/viewPagerOnboarding"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewPagerOnboarding" />
 
-    <!-- CardView for Sign Up Button -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardSignUp"
         android:layout_width="0dp"
@@ -72,9 +77,10 @@
         app:layout_constraintTop_toBottomOf="@id/dotIndicatorLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="70dp"
         android:clickable="true"
-        android:focusable="true">
+        android:focusable="true"
+        app:cardBackgroundColor="#352fda">
 
         <TextView
             android:layout_width="match_parent"
@@ -82,7 +88,8 @@
             android:text="Sign Up For Free"
             android:padding="16dp"
             android:textSize="18sp"
-            android:textColor="#00ffff"
+            android:textStyle="bold"
+            android:textColor="#010b13"
             android:gravity="center" />
     </androidx.cardview.widget.CardView>
 
@@ -96,17 +103,19 @@
         app:layout_constraintTop_toBottomOf="@id/cardSignUp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:clickable="true"
         android:focusable="true"
-        app:cardBackgroundColor="#5b39c6">
+        app:cardBackgroundColor="@android:color/transparent">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Log In"
+            android:textStyle="bold"
             android:padding="16dp"
-            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textColor="#241cff"
             android:gravity="center" />
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

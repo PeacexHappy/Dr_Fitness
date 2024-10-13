@@ -44,6 +44,7 @@ dependencies {
     implementation("com.google.android.material:material:1.10.0")
 
 
+
     implementation("com.github.bumptech.glide:glide:4.14.2") // Glide library
     annotationProcessor("com.github.bumptech.glide:compiler:4.14.2") // For Glide annotations
 

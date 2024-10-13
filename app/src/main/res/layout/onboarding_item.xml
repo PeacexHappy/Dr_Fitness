@@ -17,7 +17,7 @@
         <ImageView
             android:id="@+id/imageOnboarding"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="350dp"
             android:scaleType="centerCrop"
             android:contentDescription="Onboarding Image" />
 
@@ -25,12 +25,14 @@
 
     <TextView
         android:id="@+id/tvDescription"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Your quote goes here."
-        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
         android:gravity="center"
-        android:textColor="@android:color/black"
-        android:layout_marginTop="16dp"
-        android:layout_gravity="center" />  <!-- Center the text -->
+        android:text="Your quote goes here."
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:visibility="visible" />  <!-- Center the text -->
 </LinearLayout>
