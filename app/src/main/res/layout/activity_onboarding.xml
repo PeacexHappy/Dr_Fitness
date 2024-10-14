@@ -30,7 +30,7 @@
         android:text="Dr Fitness"
         android:textSize="28sp"
         android:textStyle="bold"
-        android:textColor="#241cff"
+        android:textColor="#ff230c"
         app:layout_constraintTop_toBottomOf="@id/tvWelcome"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,7 +80,7 @@
         android:layout_marginTop="70dp"
         android:clickable="true"
         android:focusable="true"
-        app:cardBackgroundColor="#352fda">
+        app:cardBackgroundColor="#ff230c">
 
         <TextView
             android:layout_width="match_parent"
@@ -89,7 +89,7 @@
             android:padding="16dp"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="#010b13"
+            android:textColor="#ffffff"
             android:gravity="center" />
     </androidx.cardview.widget.CardView>
 
@@ -115,7 +115,7 @@
             android:textStyle="bold"
             android:padding="16dp"
             android:textSize="18sp"
-            android:textColor="#241cff"
+            android:textColor="#ff230c"
             android:gravity="center" />
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
