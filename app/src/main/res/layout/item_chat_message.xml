@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The Root is a LinearLayout. This is the key to the fix. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/messageRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="8dp"
+    android:paddingVertical="4dp">
+
+    <!-- The TextView is the only child. Its parent's gravity will align it. -->
+    <TextView
+        android:id="@+id/textViewMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="280dp"
+        android:padding="12dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        tools:background="@drawable/chat_bubble_user"
+        tools:text="This is a sample message from the user." />
+
+</LinearLayout>

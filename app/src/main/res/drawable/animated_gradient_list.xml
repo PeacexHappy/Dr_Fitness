@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:duration="4000">
+        <shape android:shape="rectangle">
+            <!-- A richer Light Blue -->
+            <!-- A richer Light Purple -->
+            <gradient
+                android:angle="45"
+                android:endColor="#B3E5FC"
+                android:startColor="#E1BEE7"
+                android:type="linear" />
+        </shape>
+    </item>
+
+    <item android:duration="4000">
+        <shape android:shape="rectangle">
+            <!-- A richer Light Teal -->
+            <!-- A richer Light Blue -->
+            <gradient
+                android:angle="45"
+                android:endColor="#B2DFDB"
+                android:startColor="#B3E5FC"
+                android:type="linear" />
+        </shape>
+    </item>
+
+    <item android:duration="4000">
+        <shape android:shape="rectangle">
+            <!-- A richer Light Purple -->
+            <!-- A richer Light Teal -->
+            <gradient
+                android:angle="45"
+                android:endColor="#E1BEE7"
+                android:startColor="#B2DFDB"
+                android:type="linear" />
+        </shape>
+    </item>
+
+</animation-list>

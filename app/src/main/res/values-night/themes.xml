@@ -1,0 +1,52 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme for Dark Mode. -->
+    <style name="Theme.DrFitness" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- Color Palette -->
+        <item name="colorPrimary">@color/primary_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="colorSurface">@color/surface_dark</item>
+        <item name="colorOnSurface">@color/text_primary_dark</item>
+
+        <item name="android:windowBackground">@color/background_dark</item>
+        <item name="android:statusBarColor">@color/background_dark</item>
+
+        <!-- Component Default Styles -->
+
+        <!-- Style for all MaterialCardViews in Dark Mode -->
+        <item name="materialCardViewStyle">@style/Widget.App.CardView.Dark</item>
+
+        <!-- Style for all Buttons in Dark Mode -->
+        <item name="materialButtonStyle">@style/Widget.App.Button.Dark</item>
+
+        <!-- Style for all Outlined Buttons in Dark Mode -->
+        <item name="materialButtonOutlinedStyle">@style/Widget.App.Button.Outlined.Dark</item>
+
+        <!-- Style for all TextViews in Dark Mode -->
+        <item name="android:textViewStyle">@style/Widget.App.TextView.Dark</item>
+        <item name="android:textColor">@color/text_primary_dark</item>
+
+    </style>
+
+    <!-- Specific Component Styles for Dark Mode -->
+
+    <style name="Widget.App.CardView.Dark" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/surface_dark</item>
+    </style>
+
+    <style name="Widget.App.Button.Dark" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/primary_blue</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Widget.App.Button.Outlined.Dark" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/primary_blue</item>
+        <item name="android:textColor">@color/primary_blue</item>
+    </style>
+
+    <style name="Widget.App.TextView.Dark" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/text_primary_dark</item>
+    </style>
+
+</resources>

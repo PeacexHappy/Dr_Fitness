@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    tools:context=".BodyPartActivity">
+
+    <!-- Back Arrow -->
+    <ImageView
+        android:id="@+id/buttonBack"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:contentDescription="Back"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/text_primary_light" />
+
+    <!-- Title, will be set dynamically e.g., "Beginner Workouts" -->
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Choose a Body Part"
+        android:textColor="@color/text_primary_light"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonBack" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitle">
+
+        <!-- Use a LinearLayout for a simple vertical list of buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Each button is a body part option -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonFullBody"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="20dp"
+                android:text="Full Body Workout"
+                android:textColor="@color/primary_blue"
+                app:strokeColor="@color/primary_blue" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonBicepTricep"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingVertical="20dp"
+                android:text="Bicep / Triceps"
+                android:textColor="@color/primary_blue"
+                app:strokeColor="@color/primary_blue" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonLegs"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingVertical="20dp"
+                android:text="Legs"
+                android:textColor="@color/primary_blue"
+                app:strokeColor="@color/primary_blue" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonShoulder"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingVertical="20dp"
+                android:text="Shoulder"
+                android:textColor="@color/primary_blue"
+                app:strokeColor="@color/primary_blue" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonBackMuscle"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingVertical="20dp"
+                android:text="Back"
+                android:textColor="@color/primary_blue"
+                app:strokeColor="@color/primary_blue" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonAbs"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingVertical="20dp"
+                android:text="Abs"
+                android:textColor="@color/primary_blue"
+                app:strokeColor="@color/primary_blue" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

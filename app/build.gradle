@@ -1,0 +1,87 @@
+// This block declares the plugins used by the app. It's essential.
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
+}
+
+// This block reads your secret API key from the local.properties file.
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localProperties.load(new FileInputStream(localPropertiesFile))
+}
+
+// This is the main configuration block for the Android app.
+android {
+    // Defines the package name for your app's generated code.
+    namespace 'com.drfitness.app'
+    // Specifies the Android API level your app is compiled against.
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.drfitness.app"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        // This makes your Gemini API key available in your Kotlin code.
+        buildConfigField("String", "GEMINI_API_KEY", "\"${localProperties['GEMINI_API_KEY']}\"")
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    // This enables modern Android features like View Binding and BuildConfig.
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+    }
+}
+
+// This block declares all the external libraries your app needs.
+dependencies {
+    // AndroidX Core Libraries
+    implementation 'androidx.core:core-ktx:1.16.0'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+    implementation 'androidx.activity:activity-ktx:1.10.1'
+    implementation 'com.google.android.material:material:1.12.0'
+
+    // Gemini AI SDK
+    implementation 'com.google.ai.client.generativeai:generativeai:0.9.0'
+
+    // Firebase Bill of Materials (BOM) - Manages versions for Firebase libs
+    implementation platform('com.google.firebase:firebase-bom:33.16.0')
+
+    // Firebase Libraries (versions are managed by the BOM)
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-auth'
+
+    implementation 'com.google.android.gms:play-services-auth:21.3.0'
+    implementation libs.androidx.activity
+    implementation libs.androidx.navigation.fragment.ktx
+    implementation libs.androidx.navigation.ui.ktx
+
+
+    // Image loading library
+    implementation 'io.coil-kt:coil:2.6.0'
+
+
+    // Testing Libraries
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+}

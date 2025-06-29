@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- The color when the item is selected/checked -->
+    <item android:color="@color/primary_blue" android:state_checked="true" />
+
+    <!-- The color for the unselected/default state -->
+    <item android:color="@color/text_secondary_light" android:state_checked="false"/>
+</selector>

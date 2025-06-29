@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "827166503686",
+    "project_id": "dr-fitness-app-8e0d3",
+    "storage_bucket": "dr-fitness-app-8e0d3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827166503686:android:437fa9cad0dd0806a6a487",
+        "android_client_info": {
+          "package_name": "com.drfitness.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "827166503686-b6qs7ah0b6s3sae7kjofi6dn4a4ljibi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.drfitness.app",
+            "certificate_hash": "9dc7e372f0d491e44f21b1cd119af8300840ad81"
+          }
+        },
+        {
+          "client_id": "827166503686-4bkchmb3vvnuc7fl1eoe6dpgom20sm17.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDOlHf0M6N0WKPFM8PqNUYXlXngVS-qK4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "827166503686-4bkchmb3vvnuc7fl1eoe6dpgom20sm17.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

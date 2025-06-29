@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/navigation_workouts"
+        android:icon="@drawable/ic_fitness_center"
+        android:title="Workouts" />
+
+    <item
+        android:id="@+id/navigation_ai_coach"
+        android:icon="@drawable/ic_ai_chat"
+        android:title="AI Coach" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_person"
+        android:title="Profile" />
+
+</menu>

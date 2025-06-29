@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Brand Colors -->
+    <color name="primary_blue">#2071f3</color> <!-- A vibrant blue from your design -->
+    <color name="primary_blue_dark">#0D47A1</color>
+    <color name="primary_blue_light">#5472D3</color>
+
+    <!-- Light Theme Colors -->
+    <color name="background_light">#FFFFFF</color> <!-- Pure white for light theme -->
+    <color name="surface_light">#F8F9FC</color> <!-- Off-white for cards in light theme -->
+    <color name="text_primary_light">#0D131C</color> <!-- Very dark grey for text -->
+    <color name="text_secondary_light">#8A8A8E</color> <!-- Lighter grey for subtitles -->
+
+    <!-- Dark Theme Colors -->
+    <color name="background_dark">#121212</color> <!-- Standard dark background -->
+    <color name="surface_dark">#1E1E1E</color> <!-- Slightly lighter grey for cards in dark theme -->
+    <color name="text_primary_dark">#FFFFFF</color> <!-- Pure white for text -->
+    <color name="text_secondary_dark">#A9A9A9</color> <!-- Lighter grey for subtitles -->
+
+    <!-- Neutral Black and White -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="auth_background">#FFFFFF</color>
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".WorkoutDetailActivity">
+
+    <!-- Back Arrow -->
+    <ImageView
+        android:id="@+id/buttonBack"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:contentDescription="Back"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/text_primary_light" />
+
+    <!-- Title, will be set dynamically e.g., "Beginner Legs Workout" -->
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/text_primary_light"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/buttonBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/buttonBack"
+        app:layout_constraintTop_toTopOf="@id/buttonBack"
+        tools:text="Beginner Legs Workout" />
+
+    <!-- The list that will display all exercises -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewExercises"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitle"
+        tools:listitem="@layout/item_exercise" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

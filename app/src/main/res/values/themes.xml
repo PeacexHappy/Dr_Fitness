@@ -1,0 +1,22 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme for Day/Light Mode. -->
+    <style name="Theme.DrFitness" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary_blue</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/background_light</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item> <!-- Makes status bar icons dark -->
+
+        <!-- Main background color for the app -->
+        <item name="android:windowBackground">@color/background_light</item>
+
+        <!-- Default text color for the app -->
+        <item name="android:textColor">@color/text_primary_light</item>
+    </style>
+    <!-- Keep the custom style for TextInputLayout we added before -->
+    <style name="Widget.App.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/primary_blue</item>
+        <item name="hintTextColor">@color/text_secondary_light</item>
+        <item name="android:textColor">@color/text_primary_light</item>
+    </style>
+</resources>

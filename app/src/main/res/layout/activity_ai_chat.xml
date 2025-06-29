@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AiChatActivity">
+
+    <!-- Top Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Dr. Fitness AI Assistant"
+        app:titleTextColor="@color/white" />
+
+    <!-- Chat History List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewChat"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/bottom_chat_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:listitem="@layout/item_chat_message" />
+
+    <!-- Loading Indicator -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/recyclerViewChat"
+        app:layout_constraintEnd_toEndOf="@id/recyclerViewChat"
+        app:layout_constraintStart_toStartOf="@id/recyclerViewChat"
+        app:layout_constraintTop_toTopOf="@id/recyclerViewChat"
+        tools:visibility="visible" />
+
+
+    <!-- Bottom Input Area -->
+    <View
+        android:id="@+id/bottom_chat_view"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textFieldMessage"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:hint="Tell me your fitness goal..."
+        app:boxCornerRadiusBottomEnd="24dp"
+        app:boxCornerRadiusBottomStart="24dp"
+        app:boxCornerRadiusTopEnd="24dp"
+        app:boxCornerRadiusTopStart="24dp"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_chat_view"
+        app:layout_constraintEnd_toStartOf="@id/buttonSend"
+        app:layout_constraintStart_toStartOf="@id/bottom_chat_view"
+        app:layout_constraintTop_toTopOf="@id/bottom_chat_view">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageButton
+        android:id="@+id/buttonSend"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Send message"
+        android:src="@drawable/ic_send"
+        app:layout_constraintBottom_toBottomOf="@id/textFieldMessage"
+        app:layout_constraintEnd_toEndOf="@id/bottom_chat_view"
+        app:layout_constraintTop_toTopOf="@id/textFieldMessage"
+        app:tint="@color/primary_blue" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
