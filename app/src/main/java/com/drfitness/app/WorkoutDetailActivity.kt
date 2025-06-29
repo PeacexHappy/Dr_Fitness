@@ -29,7 +29,7 @@ class WorkoutDetailActivity : AppCompatActivity() {
         binding.textViewTitle.text = "$selectedLevel $selectedBodyPart"
 
         // Find the workout plan from our mock database
-        val workoutPlan = WorkoutDatabase.getPlan(selectedLevel, selectedBodyPart)
+        val workoutPlan = WorkoutPlanRepository.getPlan(selectedLevel, selectedBodyPart)
 
         if (workoutPlan != null) {
             // If a plan is found, set up the RecyclerView

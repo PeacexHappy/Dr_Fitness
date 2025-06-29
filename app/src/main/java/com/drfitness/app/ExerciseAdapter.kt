@@ -2,31 +2,43 @@ package com.drfitness.app
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.drfitness.app.databinding.ItemExerciseBinding
+import coil.load
+import com.drfitness.app.databinding.ItemExerciseRowBinding
 
-class ExerciseAdapter(private val exercises: List<Exercise>) : RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder>() {
+class ExerciseAdapter(private var exercises: List<Exercise>) :
+    RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder>() {
 
-    // This class holds the view for a single item
-    class ExerciseViewHolder(val binding: ItemExerciseBinding) : RecyclerView.ViewHolder(binding.root)
+    class ExerciseViewHolder(val binding: ItemExerciseRowBinding) : RecyclerView.ViewHolder(binding.root)
 
-    // Creates a new ViewHolder instance when the RecyclerView needs one
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseViewHolder {
-        val binding = ItemExerciseBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemExerciseRowBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ExerciseViewHolder(binding)
     }
 
-    // Returns the total number of items in the list
-    override fun getItemCount(): Int {
-        return exercises.size
-    }
-
-    // Binds the data from an exercise object to the views in the ViewHolder
     override fun onBindViewHolder(holder: ExerciseViewHolder, position: Int) {
         val exercise = exercises[position]
-        holder.binding.textViewExerciseName.text = exercise.name
-        holder.binding.textViewSetsAndReps.text = "${exercise.sets} Sets x ${exercise.reps}"
+        holder.binding.textExerciseName.text = exercise.name
+        holder.binding.textSetsReps.text = "${exercise.sets} Sets x ${exercise.reps}"
+        holder.binding.imageExercise.load(exercise.imageUrl) {
+            crossfade(true)
+            error(R.drawable.ic_launcher_background) // Placeholder in case of error
+        }
 
-        // TODO: Load the exercise.imageUrl into holder.binding.imageViewExercise using a library like Glide or Coil
+        holder.itemView.setOnClickListener {
+            // Create the navigation action, passing the clicked exercise object
+            val action = WorkoutListFragmentDirections.actionWorkoutListFragmentToExerciseDetailFragment(exercise)
+            // Perform the navigation
+            it.findNavController().navigate(action)
+        }
+    }
+
+    override fun getItemCount(): Int = exercises.size
+
+    // This function is how we update the list when the user taps a new filter chip.
+    fun updateExercises(newExercises: List<Exercise>) {
+        exercises = newExercises
+        notifyDataSetChanged()
     }
 }

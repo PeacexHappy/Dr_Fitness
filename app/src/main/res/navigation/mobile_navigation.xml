@@ -23,10 +23,25 @@
     </fragment>
 
     <fragment
+        android:id="@+id/exerciseDetailFragment"
+        android:name="com.drfitness.app.ExerciseDetailFragment"
+        android:label="fragment_exercise_detail"
+        tools:layout="@layout/fragment_exercise_detail" >
+        <argument
+            android:name="exercise"
+            app:argType="com.drfitness.app.Exercise" />
+    </fragment>
+
+    <fragment
         android:id="@+id/workoutListFragment"
         android:name="com.drfitness.app.WorkoutListFragment"
         android:label="WorkoutListFragment"
         tools:layout="@layout/fragment_workout_list" >
+
+        <action
+            android:id="@+id/action_workoutListFragment_to_exerciseDetailFragment"
+            app:destination="@id/exerciseDetailFragment" />
+
         <argument
             android:name="categoryName"
             app:argType="string" />

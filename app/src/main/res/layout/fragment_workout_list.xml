@@ -1,85 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".WorkoutListFragment"
-    tools:background="@color/background_dark">
+    android:background="@android:color/black"
+    tools:context=".WorkoutListFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp">
-
-        <ImageView
-            android:id="@+id/buttonBack"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@drawable/ic_arrow_back"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="?attr/colorOnSurface" />
-
-        <TextView
-            android:id="@+id/textViewTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Upper Body" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <!-- Filter Chips -->
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chip_group_filter"
+    <!-- Back Arrow - This is important for navigation -->
+    <ImageView
+        android:id="@+id/back_arrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginVertical="8dp"
-        app:singleSelection="true"
-        app:selectionRequired="true">
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <!-- Title of the category -->
+    <TextView
+        android:id="@+id/text_view_category_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/back_arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/back_arrow"
+        app:layout_constraintTop_toTopOf="@id/back_arrow"
+        tools:text="Upper Body" />
+
+    <!-- Chip Group for filtering by difficulty -->
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_group_filter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:chipSpacingHorizontal="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/back_arrow"
+        app:singleLine="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_all"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="All"
+            android:textColor="@color/white"
+            app:chipBackgroundColor="@color/chip_background_color" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip_beginner"
-            style="@style/Widget.Material3.Chip.Filter"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Beginner"
-            android:checked="true"/>
+            android:textColor="@color/white"
+            app:chipBackgroundColor="@color/chip_background_color" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip_intermediate"
-            style="@style/Widget.Material3.Chip.Filter"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Intermediate" />
+            android:text="Intermediate"
+            android:textColor="@color/white"
+            app:chipBackgroundColor="@color/chip_background_color" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip_advanced"
-            style="@style/Widget.Material3.Chip.Filter"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Advanced" />
-
+            android:text="Advanced"
+            android:textColor="@color/white"
+            app:chipBackgroundColor="@color/chip_background_color" />
     </com.google.android.material.chip.ChipGroup>
 
-    <!-- List of workouts -->
+    <!-- RecyclerView to display the list of workout plans -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/workout_list_recycler_view"
-        android:layout_width="match_parent"
+        android:id="@+id/recycler_view_workout_plans"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:clipToPadding="false"
-        android:paddingHorizontal="16dp"
+        android:layout_marginTop="8dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chip_group_filter"
         tools:listitem="@layout/item_workout_plan_card" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
