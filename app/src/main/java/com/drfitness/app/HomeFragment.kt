@@ -1,24 +1,23 @@
+// In com/drfitness/app/HomeFragment.kt
 package com.drfitness.app
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.drfitness.app.databinding.FragmentHomeBinding
-import com.google.firebase.auth.FirebaseAuth
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var auth: FirebaseAuth
-
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
@@ -28,13 +27,19 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // The logic for setting the welcome text can stay, but the old cards are gone.
-        // We will re-wire the new cards later.
+        binding.gymLink.setOnClickListener {
 
-        // Example of wiring up the new AI Coach card
-        binding.cardAiCoach.setOnClickListener {
-            // This is just an example for now. The AI Coach tab will handle this.
-            Toast.makeText(requireContext(), "AI Coach Clicked!", Toast.LENGTH_SHORT).show()
+
+            // Find the BottomNavigationView in the parent activity (HomeActivity).
+            val bottomNav = activity?.findViewById<BottomNavigationView>(R.id.nav_view)
+
+            // Programmatically set the selected item to the 'Workouts' tab.
+            // The NavController in HomeActivity will automatically handle the navigation.
+            bottomNav?.selectedItemId = R.id.navigation_workouts
+        }
+        binding.cardPhysiotherapy.setOnClickListener {
+            // This triggers the new action we defined in the navigation graph.
+            findNavController().navigate(R.id.action_navigation_home_to_painAreaFragment)
         }
     }
 

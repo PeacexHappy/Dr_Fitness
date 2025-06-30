@@ -23,7 +23,6 @@
             android:textStyle="bold" />
 
         <!-- Gym Workout Card -->
-        <!-- Gym Workout Card -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardGymWorkout"
             android:layout_width="match_parent"
@@ -110,9 +109,95 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Physiotherapy Card -->
-        <!-- This card would follow the same structure as the Gym Workout card -->
-        <!-- We will add it in a future step to keep this one focused -->
+        <!-- =========== NEW PHYSIOTHERAPY CARD ADDED HERE =========== -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_physiotherapy"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Background Image -->
+                <ImageView
+                    android:id="@+id/physio_card_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/card_bg_physio"
+                    android:scaleType="centerCrop"/>
+
+                <!-- Dark Gradient Overlay -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/gradient_overlay_dark"/>
+
+                <!-- Icon with Background -->
+                <ImageView
+                    android:id="@+id/physio_icon_bg"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    app:srcCompat="@drawable/rounded_square_bg"
+                    app:tint="#FE2400"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/physio_icon"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    app:srcCompat="@drawable/ic_physio"
+                    app:tint="@color/white"
+                    app:layout_constraintTop_toTopOf="@id/physio_icon_bg"
+                    app:layout_constraintBottom_toBottomOf="@id/physio_icon_bg"
+                    app:layout_constraintStart_toStartOf="@id/physio_icon_bg"
+                    app:layout_constraintEnd_toEndOf="@id/physio_icon_bg"/>
+
+                <!-- Text Content -->
+                <TextView
+                    android:id="@+id/physio_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Physiotherapy"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="@id/physio_icon_bg"
+                    app:layout_constraintTop_toBottomOf="@id/physio_icon_bg"/>
+
+                <TextView
+                    android:id="@+id/physio_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Relief exercises for pain"
+                    android:textColor="@color/text_secondary_dark"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@id/physio_title"
+                    app:layout_constraintTop_toBottomOf="@id/physio_title"/>
+
+                <TextView
+                    android:id="@+id/physio_link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Explore →"
+                    android:textColor="#FE2400"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp"
+                    app:layout_constraintStart_toStartOf="@id/physio_icon_bg"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <!-- ========================================================= -->
+
 
         <!-- AI Fitness Coach Card -->
         <com.google.android.material.card.MaterialCardView
@@ -125,67 +210,8 @@
             app:strokeWidth="0dp"
             android:backgroundTint="@color/surface_dark">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp">
+            <!-- ... (content of AI Coach card remains the same) ... -->
 
-                <ImageView
-                    android:id="@+id/ai_icon_bg"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    app:srcCompat="@drawable/rounded_square_bg"
-                    app:tint="@color/primary_blue"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
-
-                <ImageView
-                    android:id="@+id/ai_icon"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    app:srcCompat="@drawable/ic_ai_chat"
-                    app:tint="@color/white"
-                    app:layout_constraintTop_toTopOf="@id/ai_icon_bg"
-                    app:layout_constraintBottom_toBottomOf="@id/ai_icon_bg"
-                    app:layout_constraintStart_toStartOf="@id/ai_icon_bg"
-                    app:layout_constraintEnd_toEndOf="@id/ai_icon_bg"/>
-
-                <TextView
-                    android:id="@+id/ai_title"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:text="AI Fitness Coach"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@id/ai_icon_bg"
-                    app:layout_constraintEnd_toStartOf="@id/ai_arrow"
-                    app:layout_constraintTop_toTopOf="parent"/>
-
-                <TextView
-                    android:id="@+id/ai_subtitle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:text="Get personalized advice"
-                    android:textColor="@color/text_secondary_dark"
-                    android:textSize="14sp"
-                    app:layout_constraintStart_toEndOf="@id/ai_icon_bg"
-                    app:layout_constraintEnd_toStartOf="@id/ai_arrow"
-                    app:layout_constraintTop_toBottomOf="@id/ai_title"/>
-
-                <ImageView
-                    android:id="@+id/ai_arrow"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    app:srcCompat="@drawable/ic_arrow_forward"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:tint="@color/text_secondary_dark"/>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <!-- Quick Access Section -->
@@ -199,123 +225,7 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <!-- This LinearLayout will hold our recent activity cards.
-             We will add cards here dynamically from our code later.
-             For now, we'll add a placeholder to see how it looks. -->
-        <LinearLayout
-            android:id="@+id/recent_activity_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:orientation="vertical">
-
-            <!-- Placeholder Card 1: This is just for design preview -->
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="0dp"
-                app:strokeWidth="0dp"
-                android:backgroundTint="@color/surface_dark">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        app:srcCompat="@drawable/ic_fitness_center"
-                        app:tint="@color/primary_blue" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Beginner Full Body"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Gym Workout"
-                            android:textColor="@color/text_secondary_dark"
-                            android:textSize="12sp" />
-
-                    </LinearLayout>
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        app:srcCompat="@drawable/ic_arrow_forward"
-                        app:tint="@color/text_secondary_dark" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Placeholder Card 2: This is just for design preview -->
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="0dp"
-                app:strokeWidth="0dp"
-                android:backgroundTint="@color/surface_dark">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        app:srcCompat="@drawable/ic_physio"
-                        app:tint="@color/primary_blue" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Back Pain Relief"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Physiotherapy"
-                            android:textColor="@color/text_secondary_dark"
-                            android:textSize="12sp" />
-                    </LinearLayout>
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        app:srcCompat="@drawable/ic_arrow_forward"
-                        app:tint="@color/text_secondary_dark" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-        </LinearLayout>
+        <!-- ... (rest of your layout remains the same) ... -->
 
     </LinearLayout>
 </ScrollView>

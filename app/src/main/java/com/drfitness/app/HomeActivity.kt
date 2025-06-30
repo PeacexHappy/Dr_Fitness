@@ -1,10 +1,10 @@
+// In com/drfitness/app/HomeActivity.kt
 package com.drfitness.app
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.drfitness.app.databinding.ActivityHomeBinding
 
@@ -17,15 +17,18 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Find the NavHostFragment from the layout
+        // --- THIS IS THE ROBUST AND CORRECT METHOD ---
+
+        // 1. Find the NavHostFragment from the layout using its ID.
+        // This is safer because it retrieves the fragment itself first.
         val navHostFragment = supportFragmentManager
-            .findFragmentById(R.id.nav_host_fragment) as androidx.navigation.fragment.NavHostFragment
+            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
 
-        // Get the NavController from the NavHostFragment
-        val navController = navHostFragment.navController
+        // 2. Get the NavController from the NavHostFragment.
+        val navController: NavController = navHostFragment.navController
 
-        // This connects the BottomNavigationView to the NavController.
-        // Tapping an icon in the bar will now navigate to the fragment with the matching ID.
+        // 3. This line connects the BottomNavigationView to the NavController.
+        // It correctly handles clicks and icon highlighting.
         binding.navView.setupWithNavController(navController)
     }
 }

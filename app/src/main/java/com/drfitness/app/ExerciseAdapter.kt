@@ -27,9 +27,11 @@ class ExerciseAdapter(private var exercises: List<Exercise>) :
         }
 
         holder.itemView.setOnClickListener {
-            // Create the navigation action, passing the clicked exercise object
-            val action = WorkoutListFragmentDirections.actionWorkoutListFragmentToExerciseDetailFragment(exercise)
-            // Perform the navigation
+            // We now pass the entire list of exercises and the specific position that was clicked.
+            val action = WorkoutListFragmentDirections.actionWorkoutListFragmentToExerciseDetailFragment(
+                exercises = exercises.toTypedArray(), // Convert List to Array for navigation
+                clickedPosition = position
+            )
             it.findNavController().navigate(action)
         }
     }

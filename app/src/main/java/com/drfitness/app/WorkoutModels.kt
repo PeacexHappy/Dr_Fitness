@@ -42,3 +42,9 @@ sealed class WorkoutScreenItem {
     data class FeaturedCarousel(val featuredWorkouts: List<FeaturedWorkout>) : WorkoutScreenItem()
     data class CategoryGrid(val categories: List<WorkoutCategory>) : WorkoutScreenItem()
 }
+
+data class PhysioCategory(
+    val name: String,
+    val description: String,
+    val imageUrl: String
+)
